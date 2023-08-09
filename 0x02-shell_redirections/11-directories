@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1t | head
+find . -type d -not -path "." | wc -1
