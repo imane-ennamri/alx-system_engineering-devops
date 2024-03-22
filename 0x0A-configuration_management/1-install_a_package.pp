@@ -1,6 +1,12 @@
-#!/usr/bin/pup
-# Install an especific version of flask (2.1.0)
-package {'flask':
-  ensure   => '2.1.0',
-  provider => 'pip3',
+file {'/tmp/school':
+    ensure  => 'file',
+    mode    => '0744',
+    owner   => 'www-data',
+    group   => 'www-data',
+    content => 'I love Puppet',
+}
+exec { 'pkill':
+    command => 'pkill killmenow',
+    path    => ['/bin', '/usr/bin'],
+    returns => [0, 1],
 }
