@@ -1,12 +1,5 @@
-file {'/tmp/school':
-    ensure  => 'file',
-    mode    => '0744',
-    owner   => 'www-data',
-    group   => 'www-data',
-    content => 'I love Puppet',
-}
-exec { 'pkill':
-    command => 'pkill killmenow',
-    path    => ['/bin', '/usr/bin'],
-    returns => [0, 1],
+# install puppet-lint -v 2.5.0
+
+exec { 'puppet-lint':
+  command => '/usr/bin/apt-get -y install puppet-lint -v 2.5.0',
 }
